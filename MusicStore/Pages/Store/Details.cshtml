@@ -1,0 +1,26 @@
+﻿@page "{id}"
+@model MusicStore.Pages.Store.DetailsModel
+@{
+    ViewBag.Title = "Album - " + Model.Album.Title;
+}
+<h2>@Model.Album.Title</h2>
+<p>
+    <img alt="@Model.Album.Title" src="@Url.Content(@Model.Album.AlbumArtUrl)" />
+</p>
+<div id="album-details">
+    <p>
+        <em>Genre:</em>
+        @Model.Album.Genre.Name
+    </p>
+    <p>
+        <em>Artist:</em>
+        @Model.Album.Artist.Name
+    </p>
+    <p>
+        <em>Price:</em>
+        <label>@Model.Album.Price</label>
+    </p>
+    <p class="button">
+        <a asp-page="/ShoppingCart/Index" asp-page-handler="AddToCart" asp-route-id="@Model.Album.AlbumId">Add to cart</a>
+    </p>
+</div>

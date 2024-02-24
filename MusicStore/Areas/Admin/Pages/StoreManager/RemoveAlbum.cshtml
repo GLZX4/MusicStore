@@ -1,0 +1,28 @@
+﻿@page
+@model RemoveAlbumModel
+@{
+    ViewBag.Title = "Delete";
+}
+@if (Model.Album != null)
+{
+    <h2>Delete Confirmation</h2>
+
+    <p>
+        Are you sure you want to delete the album titled
+        <strong>@Model.Album.Title</strong>?
+    </p>
+
+    <form method="post">
+        <p>
+            @Html.Hidden("Id", Model.Album.AlbumId)
+            <input type="submit" value="Delete" class="btn btn-danger" />
+        </p>
+        <p>
+            <a asp-page="Index">Back to List</a>
+        </p>
+    </form>
+}
+else
+{
+    @Html.Label(null, "Unable to locate the album")
+}

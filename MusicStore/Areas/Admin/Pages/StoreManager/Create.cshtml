@@ -1,0 +1,58 @@
+﻿@page
+@model CreateModel
+@{
+    ViewBag.Title = "Create";
+}
+<h2>Create</h2>
+
+<form asp-antiforgery="true">
+    <div class="form-horizontal">
+        <h4>Album</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.LabelFor(model => model.Album.GenreId, "GenreId", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Album.GenreId, Model.GenreId)
+                @Html.ValidationMessageFor(model => model.Album.GenreId)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Album.ArtistId, "ArtistId", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Album.ArtistId, Model.ArtistId)
+                @Html.ValidationMessageFor(model => model.Album.ArtistId)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Album.Title, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Album.Title)
+                @Html.ValidationMessageFor(model => model.Album.Title)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Album.Price, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Album.Price)
+                @Html.ValidationMessageFor(model => model.Album.Price)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Album.AlbumArtUrl, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Album.AlbumArtUrl)
+                @Html.ValidationMessageFor(model => model.Album.AlbumArtUrl)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>

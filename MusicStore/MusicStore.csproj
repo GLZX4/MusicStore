@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>aspnet-MusicStore-ABACCA10-745A-4298-AF30-57928F50AC2E</UserSecretsId>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <StartupObject>MusicStore.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.4" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Pages\Shared\Components\" />
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+<ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.30" />
+    <PackageReference Include="Microsoft.NETCore.App" Version="2.1.30" />
+</ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Areas\Admin\Pages\_ViewImports.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Admin\Pages\_ViewStart.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
+</Project>

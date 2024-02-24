@@ -1,0 +1,62 @@
+﻿@page
+@model IndexModel
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+<p>
+    <a href="@Url.Page("Create")">Create New</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Albums.FirstOrDefault().Genre.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Albums.FirstOrDefault().Artist.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Albums.FirstOrDefault().Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Albums.FirstOrDefault().Price)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model.Albums)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre.Name)
+            </td>
+            <td>
+                @if (item.Artist.Name.Length <= 25)
+                {
+                    @item.Artist.Name
+                }
+                else
+                {
+                    @item.Artist.Name.Substring(0, 25)<text>...</text>
+                }
+            </td>
+            <td>
+                @if (item.Title.Length <= 25)
+                {
+                    @item.Title
+                }
+                else
+                {
+                    @item.Title.Substring(0, 25)<text>...</text>
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <a href="@Url.Page("Edit", new { id = item.AlbumId })">Edit</a> |
+                <a href="@Url.Page("Details", new { id = item.AlbumId })">Details</a> |
+                <a href="@Url.Page("RemoveAlbum", new { id = item.AlbumId })">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
