@@ -10,6 +10,10 @@
 *.userosscache
 *.sln.docstates
 
+# Data Sensitive Files
+**/config.json
+**/Properties/PublishProfiles/FTPProfile.pubxml
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
