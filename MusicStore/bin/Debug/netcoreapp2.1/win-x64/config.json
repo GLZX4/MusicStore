@@ -1,0 +1,13 @@
+{
+  "AppSettings": {
+    "SiteTitle": "ASP.NET MVC Music Store",
+    "CacheDbResults": true
+  },
+  "DefaultAdminUsername": "Administrator@test.com",
+  "DefaultAdminPassword": "YouShouldChangeThisPassword1!",
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Data Source=mssql.chester.network;Initial Catalog=db_2218541_musicstore;User ID=user_db_2218541_musicstore;Password=George123"
+    }
+  }
+}
